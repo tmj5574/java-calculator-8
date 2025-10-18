@@ -24,7 +24,7 @@ public class CalculateClass {
     }
 
     private int getResult(String[] numberList) {
-        if (numberList.length == 0) return 0;
+        if (numberList[0].isEmpty()) return 0;
         int sum = 0;
         for (String num : numberList) {
             sum += Integer.parseInt(num);
