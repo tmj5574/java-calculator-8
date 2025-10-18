@@ -12,7 +12,7 @@ public class Application {
         exceptionClass.checkInput(input);
         //계산하기
         int result = calculateClass.calculate(input);
-        System.out.print(result);
+        System.out.print("결과 : "+result);
     }
 }
 
