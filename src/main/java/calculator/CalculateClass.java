@@ -15,7 +15,7 @@ public class CalculateClass {
 
         //구분자가 하나 = 커스텀 구분자
         if (separatorList.size() == 1){
-            numberList = input.substring(input.indexOf("\n") + 2).split(separatorList.getFirst());
+            numberList = input.substring(input.indexOf("\\n") + 2).split(separatorList.getFirst());
             return getResult(numberList);
         }
         else{
