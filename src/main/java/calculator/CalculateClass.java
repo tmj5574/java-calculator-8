@@ -1,6 +1,7 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class CalculateClass {
     private SeparatorClass separatorClass;
@@ -11,14 +12,16 @@ public class CalculateClass {
 
     public int calculate(String input) {
         String[] numberList;
-        ArrayList<String> separatorList = separatorClass.getSeparator();
+        String separators = separatorClass.getSeparators();
 
         //구분자가 하나 = 커스텀 구분자
-        if (separatorList.size() == 1) {
-            numberList = input.substring(input.indexOf("\\n") + 2).split(separatorList.getFirst());
+        if (separators.equals("[,:]")) {
+            Pattern pattern = Pattern.compile(separators);
+            numberList = pattern.split(input);
             return getResult(numberList);
+
         } else {
-            numberList = input.split("[,:]");
+            numberList = input.substring(input.indexOf("\\n") + 2).split(separators);
             return getResult(numberList);
         }
     }
