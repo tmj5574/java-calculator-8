@@ -2,9 +2,8 @@ package calculator;
 
 public class Application {
     public static void main(String[] args) {
-        ExceptionClass exceptionClass = new ExceptionClass();
-        SeparatorClass separatorClass = new SeparatorClass(exceptionClass);
-        InputClass inputClass = new InputClass(exceptionClass, separatorClass);
+        SeparatorClass separatorClass = new SeparatorClass();
+        InputClass inputClass = new InputClass(separatorClass);
         CalculateClass calculateClass = new CalculateClass(separatorClass);
 
         //입력 받기

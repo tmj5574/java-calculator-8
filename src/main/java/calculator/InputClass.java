@@ -4,11 +4,9 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class InputClass {
 
-    private ExceptionClass exceptionClass;
     private SeparatorClass separatorClass;
 
-    public InputClass(ExceptionClass exceptionClass, SeparatorClass separatorClass) {
-        this.exceptionClass = exceptionClass;
+    public InputClass(SeparatorClass separatorClass) {
         this.separatorClass = separatorClass;
     }
 
@@ -27,6 +25,6 @@ public class InputClass {
             separatorClass.updateSeparator(input);
             return;
         }
-        exceptionClass.throwException("잘못된 입력입니다.");
+        throw new IllegalArgumentException("잘못된 입력입니다.");
     }
 }
